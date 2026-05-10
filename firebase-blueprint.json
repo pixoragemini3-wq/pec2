@@ -1,0 +1,135 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Un prodotto del menù",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "image": { "type": "string" },
+        "category": { "type": "string" },
+        "isVisible": { "type": "boolean" },
+        "availableDays": { "type": "array" }
+      },
+      "required": ["name", "price", "category"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Un ordine effettuato da un cliente",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "delivering", "completed", "cancelled"] },
+        "paymentStatus": { "type": "string", "enum": ["unpaid", "paid"] },
+        "paymentMethod": { "type": "string", "enum": ["delivery", "card"] },
+        "totalPrice": { "type": "number" },
+        "deliveryType": { "type": "string", "enum": ["pickup", "delivery"] },
+        "customerInfo": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "phone": { "type": "string" },
+            "email": { "type": "string" },
+            "address": { "type": "string" }
+          }
+        },
+        "isForSomeoneElse": { "type": "boolean" },
+        "recipientInfo": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "phone": { "type": "string" },
+            "address": { "type": "string" }
+          }
+        },
+        "items": { "type": "array" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "orderNumber", "status", "totalPrice", "createdAt", "deliveryType"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Configurazioni globali dell'app",
+      "type": "object",
+      "properties": {
+        "mobileColumns": { "type": "number", "enum": [1, 2] },
+        "desktopColumns": { "type": "number", "enum": [3, 4] }
+      }
+    },
+    "Profile": {
+      "title": "Profile",
+      "description": "Profilo utente",
+      "type": "object",
+      "properties": {
+        "firstName": { "type": "string" },
+        "lastName": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "email": { "type": "string" },
+        "isAdmin": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "SchedulingSlot": {
+      "title": "SchedulingSlot",
+      "description": "Occupazione di una fascia oraria",
+      "type": "object",
+      "properties": {
+        "ordersCount": { "type": "number" },
+        "date": { "type": "string" },
+        "time": { "type": "string" }
+      }
+    },
+    "SchedulingConfig": {
+      "title": "SchedulingConfig",
+      "description": "Configurazione degli appuntamenti",
+      "type": "object",
+      "properties": {
+        "maxOrdersPerSlot": { "type": "number" },
+        "disabledSlots": { "type": "array" },
+        "workingHours": {
+          "type": "object",
+          "properties": {
+            "start": { "type": "string" },
+            "end": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "products": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Collezione dei prodotti del menù"
+    },
+    "orders": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Collezione degli ordini"
+    },
+    "orders/{orderId}/items": {
+      "schema": "object",
+      "description": "Sottocollezione degli articoli in un ordine"
+    },
+    "users": {
+      "schema": { "$ref": "#/entities/Profile" },
+      "description": "Dati privati degli utenti"
+    },
+    "config": {
+      "schema": { "$ref": "#/entities/AppSettings" },
+      "description": "Configurazioni globali"
+    },
+    "schedulingSlots/{slotId}": {
+      "schema": { "$ref": "#/entities/SchedulingSlot" },
+      "description": "Tracciamento occupazione oraria"
+    },
+    "scheduling/config": {
+      "schema": { "$ref": "#/entities/SchedulingConfig" },
+      "description": "Configurazione globale scheduling"
+    }
+  }
+}

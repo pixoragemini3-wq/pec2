@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Alternativa:Pane e Caffè evoluzione",
+  "description": "Piattaforma ordini Pane & Caffè con integrazione Stripe per pagamenti sicuri, notifiche Real-time su Telegram per il gestore, ed email di conferma tramite Resend.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

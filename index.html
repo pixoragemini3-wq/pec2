@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://i.imgur.com/emHh9op.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Pane & Caffè Ariano Irpino | Ordina Online Hamburger e Panini</title>
+    <meta name="description" content="Ordina online i migliori hamburger, panini, e sfizi da Pane & Caffè ad Ariano Irpino. Scegli, personalizza e invia il tuo ordine su WhatsApp per ritiro o consegna a domicilio." />
+    <meta name="keywords" content="pane e caffè, ariano irpino, hamburger, panini, delivery, ordini online, food delivery, pub, take away" />
+    <link rel="canonical" href="https://www.panecaffe.info/ordini/" />
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.panecaffe.info/ordini/" />
+    <meta property="og:title" content="Pane & Caffè Ariano Irpino | Ordina Online" />
+    <meta property="og:description" content="Ordina i migliori hamburger e panini direttamente da casa. Personalizza il tuo ordine e invialo su WhatsApp!" />
+    <meta property="og:image" content="https://i.imgur.com/emHh9op.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9S9W1RPYS0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-9S9W1RPYS0');
+    </script>
+
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.panecaffe.info/ordini/" />
+    <meta property="twitter:title" content="Pane & Caffè Ariano Irpino | Ordina Online" />
+    <meta property="twitter:description" content="Ordina i migliori hamburger e panini direttamente da casa. Personalizza il tuo ordine e invialo su WhatsApp!" />
+    <meta property="twitter:image" content="https://i.imgur.com/emHh9op.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              bebas: ['"Bebas Neue"', 'sans-serif'],
+            },
+            colors: {
+              'brand-red': '#a81d1d',
+              'brand-cream': '#f5f5f0',
+              'brand-dark': '#1a1a1a',
+              'brand-gray': '#2a2a2a',
+            },
+            animation: {
+                'hero-title-fade': 'hero-title-fade 12s ease-in-out forwards',
+                'hero-subtitle-fade': 'hero-subtitle-fade 12s ease-in-out forwards',
+                'hero-bar-animation': 'hero-bar-animation 12s ease-in-out forwards',
+                'pulse-underline': 'pulse-underline 10s ease-in-out infinite',
+                'cart-jiggle': 'jiggle 0.5s ease-in-out 1',
+                'heartbeat': 'heartbeat 4s ease-in-out infinite',
+                'slide-up': 'slide-up 0.4s ease-out forwards',
+                'bounce-x': 'bounce-x 1s infinite',
+                'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+            },
+            keyframes: {
+                'slide-up': {
+                    '0%': { transform: 'translateY(100%)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                'bounce-x': {
+                    '0%, 100%': { transform: 'translateX(0)' },
+                    '50%': { transform: 'translateX(5px)' },
+                },
+                'hero-title-fade': {
+                    '0%, 100%': { opacity: '0' },
+                    '5%, 95%': { opacity: '1' },
+                },
+                'hero-subtitle-fade': {
+                    '0%, 75%, 100%': { opacity: '0' },
+                    '5%, 70%': { opacity: '1' },
+                },
+                'hero-bar-animation': {
+                    '0%': { transform: 'scaleX(0)', opacity: '1' },
+                    '4%': { transform: 'scaleX(0)', opacity: '1' },
+                    '10%': { transform: 'scaleX(1)', opacity: '1' },
+                    '20%': { transform: 'scaleX(0.95)' },
+                    '30%': { transform: 'scaleX(1)' },
+                    '40%': { transform: 'scaleX(0.95)' },
+                    '50%': { transform: 'scaleX(1)' },
+                    '60%': { transform: 'scaleX(0.95)' },
+                    '70%': { transform: 'scaleX(1)' },
+                    '80%': { transform: 'scaleX(0.95)' },
+                    '90%': { transform: 'scaleX(1)', opacity: '1' },
+                    '100%': { transform: 'scaleX(1)', opacity: '0' },
+                },
+                'pulse-underline': {
+                    '0%, 78%': { transform: 'scaleX(0)' },
+                    '80%, 98%': { transform: 'scaleX(1)' },
+                    '100%': { transform: 'scaleX(0)' }
+                },
+                'jiggle': {
+                    '0%, 100%': { transform: 'rotate(-3deg) scale(1)' },
+                    '50%': { transform: 'rotate(3deg) scale(1.1)' }
+                },
+                'heartbeat': {
+                    '0%, 20%, 40%, 100%': { transform: 'scale(1)', opacity: '0.65' },
+                    '10%, 30%': { transform: 'scale(1.05)', opacity: '1' },
+                },
+                'pop': {
+                    '0%': { transform: 'scale(0.5)', opacity: '0' },
+                    '100%': { transform: 'scale(1)', opacity: '1' },
+                }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding-top: env(safe-area-inset-top);
+        }
+        /* Fix iOS Chrome/Safari autofill background */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            -webkit-text-fill-color: #1a1a1a !important;
+        }
+        .font-brand {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #a81d1d;
+        }
+        /* Custom scrollbar for better aesthetics */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Animation for the hero image */
+        @keyframes ken-burns {
+            0% { transform: scale(1.1) translate(0, 0); }
+            100% { transform: scale(1.2) translate(-2%, 2%); }
+        }
+        .animate-ken-burns {
+            animation: ken-burns 20s ease-out forwards infinite alternate;
+        }
+
+        /* Subtle zoom for slideshow images */
+        @keyframes subtle-zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        /* Jiggle animation for icons */
+        @keyframes jiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        .animate-jiggle {
+            animation: jiggle 0.5s ease-in-out infinite alternate;
+        }
+        
+        .animate-cart-jiggle-once {
+            animation: jiggle 0.5s ease-in-out;
+        }
+        @keyframes jiggle {
+            0%, 100% { transform: rotate(-5deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.2); }
+            50% { transform: rotate(-5deg) scale(1.2); }
+            75% { transform: rotate(5deg) scale(1.2); }
+        }
+
+        /* Slow pulse animation */
+        @keyframes pulse-slow {
+           0%, 100% { opacity: 1; transform: scale(1); }
+           50% { opacity: 0.95; transform: scale(1.02); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Glow animation for the monthly special section */
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(168, 29, 29, 0.2), 0 0 5px rgba(168, 29, 29, 0.1);
+                border-color: rgba(168, 29, 29, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(168, 29, 29, 0.4), 0 0 10px rgba(168, 29, 29, 0.2);
+                border-color: rgba(168, 29, 29, 0.7);
+            }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Highlight animation for drink section */
+        @keyframes drink-section-highlight {
+            0% {
+                box-shadow: 0 0 0px rgba(168, 29, 29, 0);
+                border-color: rgba(26, 26, 26, 0.1);
+            }
+            15% {
+                box-shadow: 0 0 25px rgba(168, 29, 29, 0.8), inset 0 0 15px rgba(168, 29, 29, 0.4);
+                border-color: rgba(168, 29, 29, 1);
+                transform: scale(1.01);
+            }
+            30% {
+                box-shadow: 0 0 15px rgba(168, 29, 29, 0.5), inset 0 0 10px rgba(168, 29, 29, 0.2);
+                border-color: rgba(168, 29, 29, 0.8);
+                transform: scale(1);
+            }
+            45% {
+                box-shadow: 0 0 25px rgba(168, 29, 29, 0.8), inset 0 0 15px rgba(168, 29, 29, 0.4);
+                border-color: rgba(168, 29, 29, 1);
+                transform: scale(1.01);
+            }
+            100% {
+                box-shadow: 0 0 0px rgba(168, 29, 29, 0);
+                border-color: rgba(26, 26, 26, 0.1);
+                transform: scale(1);
+            }
+        }
+        .animate-drink-highlight {
+            animation: drink-section-highlight 2s ease-in-out forwards;
+        }
+
+        /* Fade-in animation for gallery */
+        @keyframes fade-in {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-in-out;
+        }
+
+        @keyframes flash-error {
+            0%, 100% { border-color: rgba(168, 29, 29, 0.2); box-shadow: 0 0 0 rgba(168, 29, 29, 0); }
+            50% { border-color: rgba(168, 29, 29, 1); box-shadow: 0 0 15px rgba(168, 29, 29, 0.4); background-color: rgba(168, 29, 29, 0.05); }
+        }
+        .animate-flash-error {
+            animation: flash-error 0.8s ease-in-out 4;
+        }
+
+        /* Flash opacity animation */
+        @keyframes flash-opacity {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.5; }
+        }
+        .animate-flash-opacity {
+            animation: flash-opacity 2s ease-in-out infinite;
+        }
+
+        /* Shine/light sweep effect for text */
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: light-sweep 6s ease-in-out infinite;
+        }
+
+        @keyframes light-sweep {
+            0% { left: -150%; }
+            30% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        /* Shine/light sweep effect that runs only once */
+        .shine-effect-once {
+            position: relative;
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+        .shine-effect-once::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: light-sweep-single 3s ease-in-out 1.5s;
+        }
+        
+        @keyframes light-sweep-single {
+            from { left: -150%; }
+            to { left: 150%; }
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-dark">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
